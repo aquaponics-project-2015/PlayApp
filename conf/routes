@@ -1,0 +1,15 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+GET     /system/newSystemGet        controllers.Systems.newSystemGet(waterLevel: Double?=0.0,ph: Double?=0.0,temperature: Double?=0.0,datetime: Long?=0)
+POST    /system/newSystem           controllers.Systems.newSystem()
+GET     /system/listSystems         controllers.Systems.listSystems()
+
+POST    /pump/newPump               controllers.Pumps.newPump()
+GET     /pump/listPumps             controllers.Pumps.listPumps()
